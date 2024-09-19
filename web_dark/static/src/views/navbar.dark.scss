@@ -1,0 +1,23 @@
+.o_navbar,
+.o_navbar * {
+    border-bottom: $o-white !important;
+    color: $o-gray-900 !important;
+}
+
+.o_navbar .badge,
+.o_navbar .badge * {
+    border-bottom-color: initial !important;
+    color: initial !important;
+}
+
+.o_navbar .badge {
+    color: $o-white !important;
+}
+
+.o_navbar mark {
+    color: $o-white !important;
+
+    i {
+        background-color: $o-white !important;
+    }
+}

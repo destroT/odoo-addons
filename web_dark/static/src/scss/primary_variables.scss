@@ -1,0 +1,130 @@
+///
+/// This file regroups the variables that style odoo components.
+/// They are available in every asset bundle.
+///
+
+// Colors
+// $o-white: #F9FAFB !default;
+$o-white: #ffffff !default;
+$o-black: #000 !default;
+
+$o-gray-100: #F3F4F6 !default;
+$o-gray-200: #E5E7EB !default;
+$o-gray-300: #D1D5DB !default;
+$o-gray-400: #9CA3AF !default;
+$o-gray-500: #6B7280 !default;
+$o-gray-600: #4B5563 !default;
+$o-gray-700: #374151 !default;
+$o-gray-800: #1F2937 !default;
+$o-gray-900: #111827 !default;
+
+$o-accent-primary: #1A56DB !default;
+$o-action-color: #1C64F2 !default;
+// $o-accent-primary: #02c7b5 !default;
+// $o-action-color: #05968a !default;
+
+$o-enterprise-color: $o-accent-primary !default;
+$o-enterprise-action-color: $o-action-color !default;
+
+$o-opacity-disabled: .5 !default;
+$o-opacity-muted: .76 !default;
+
+$app-menu-background-color: $o-white !default;
+
+$o-brand-odoo: $o-gray-700 !default;
+$o-brand-primary: $o-accent-primary !default;
+$o-brand-secondary: #8f8f8f !default;
+$o-brand-lightsecondary: $o-gray-400 !default;
+
+$o-action: $o-action-color !default;
+$o-main-text-color: $o-gray-700 !default;
+$o-main-link-color: $o-action-color !default;
+$o-main-color-muted: rgba($o-main-text-color, $o-opacity-muted) !default;
+
+// = Fine-tune contextual text colors.
+
+$o-theme-text-colors: (
+    "primary": $o-accent-primary,
+    "success": #057A55,
+    "info": #1C64F2,
+    "warning": #E3A008,
+    "danger": #E02424,
+    ) !default;
+
+
+// Navbar
+$o-navbar-background: $o-white !default;
+$o-navbar-border-bottom: 1px solid darken($o-white, 10%) !default;
+
+// Components
+$o-component-active-color: $o-gray-900 !default;
+$o-component-active-bg: mix($o-action, $o-white, 10%) !default;
+$o-component-active-border: $o-action !default;
+
+$o-list-group-header-color: $o-gray-900 !default;
+$o-list-footer-color: $o-gray-900 !default;
+$o-list-footer-bg-color: transparent !default;
+$o-list-footer-font-weight: 500 !default;
+
+$o-form-lightsecondary: $o-gray-200 !default;
+
+// o-inputs
+$o-input-padding-y: 1px !default;
+$o-input-padding-x: 0 !default;
+
+$o-input-border-required: $o-gray-900 !default;
+
+// Badges
+$o-badge-min-width: 2.7ch !default !default;
+
+// Buttons
+// Map of customized values for each button. If a button's design is defined
+// here, the relative values will take priority over default BS ones.
+// Notice: each map's entry is passed directly to the Bootstrap mixin, meaning
+// that all states must be defined, there can't be omissions.
+$o-btns-bs-override: (
+    ) !default;
+$o-btns-bs-override: map-merge(("primary": (background: $o-brand-primary,
+                border: $o-brand-primary,
+                color: $o-white,
+                // color: $o-gray-200,
+
+                hover-background: darken($o-brand-primary, 5%),
+                hover-border: darken($o-brand-primary, 10%),
+                hover-color: $o-white,
+
+                active-background: mix($o-brand-primary, $o-white, 10%),
+                active-border: $o-brand-primary,
+                active-color:$o-brand-primary,
+            ),
+            "secondary": (background: $o-gray-200,
+                border: $o-gray-200,
+                color: $o-gray-700,
+
+                hover-background: $o-gray-300,
+                hover-border: $o-gray-300,
+                hover-color: $o-gray-800,
+
+                active-background: $o-component-active-bg,
+                active-border: $o-component-active-border,
+                active-color: $o-component-active-color,
+            ),
+        ), $o-btns-bs-override
+);
+
+$o-btns-bs-outline-override: (
+    ) !default;
+$o-btns-bs-outline-override: map-merge(("secondary": (background: transparent,
+                border: $o-gray-300,
+                color: $o-gray-700,
+
+                hover-background: $o-gray-200,
+                hover-border: $o-gray-300,
+                hover-color: $o-gray-800,
+
+                active-background: mix($o-action-color, $o-white, 10%),
+                active-border: $o-action-color,
+                active-color: $o-gray-900,
+            ),
+        ), $o-btns-bs-outline-override
+);

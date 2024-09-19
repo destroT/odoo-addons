@@ -1,0 +1,49 @@
+[project]
+# Support Python 3.10+.
+requires-python = ">=3.10"
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "*/*/__init__.py",
+    "*/__init__.py",
+]
+
+# Same custom configuration of black
+line-length = 90
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.lint]
+extend-select = [
+    "UP", # pyupgrade
+    "I",  # isort
+]
+extend-safe-fixes = [
+    "UP007", # Use `X | Y` for type annotations
+    "UP008", # Use `super()` instead of `super(__class__, self)`
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[tool.ruff.format]
+line-ending = "auto"
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true
+
+[tool.ruff.isort]
+force-sort-within-sections = true
+no-lines-before = ["future", "standard-library"]
