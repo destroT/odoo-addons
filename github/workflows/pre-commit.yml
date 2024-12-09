@@ -1,0 +1,27 @@
+name: pre-commit
+
+on:
+  pull_request:
+  push:
+    branches: [17.0*]
+
+jobs:
+  run-pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+      # This action automatically installs and runs pre-commit
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.0
+        with:
+          # The default is to run against all files in your repository.
+          # If you have a large repo and prefer incremental checks, you can adjust.
+          # For example:
+          extra_args: '--all-files'
+          token: ${{ secrets.GITHUB_TOKEN }}
